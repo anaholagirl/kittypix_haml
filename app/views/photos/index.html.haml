@@ -1,0 +1,10 @@
+#welcome_pix
+  %h1 Welcome to Kitty Pix
+  %h2 A site for kitty lovers to display their favorite pictures
+  - @photos.each do |photo|
+    = link_to image_tag(photo.image.url(:thumb)), photo_path(photo)
+  :plain
+#add_photo
+  - if current_user != nil
+    = link_to "Add a Photo", new_user_photo_path(current_user), :class => 'btn btn-success'
+

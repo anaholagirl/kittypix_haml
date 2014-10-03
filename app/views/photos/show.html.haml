@@ -1,0 +1,6 @@
+#view_pix
+  %h1 View Kitty Pix!
+  = image_tag(@photo.image.url(:medium))
+  %h2 Submitted by:
+  %p= current_user.email
+  = link_to "Kitty Home Page", photos_path, :class => 'btn btn-primary'
